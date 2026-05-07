@@ -1,0 +1,265 @@
+{
+  "info": {
+    "_postman_id": "1fef3d8d-6ef1-4d86-a6e2-1f0d5c6c1e2a",
+    "name": "Parseflow API",
+    "description": "Collection for local testing, RapidAPI verification, and public launch QA.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://127.0.0.1:8000" },
+    { "key": "gateway_secret", "value": "" },
+    { "key": "api_key", "value": "" },
+    { "key": "admin_secret", "value": "" },
+    { "key": "client_id", "value": "docs-demo" },
+    { "key": "rapidapi_host", "value": "docflow.p.rapidapi.com" },
+    { "key": "rapidapi_key", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "GET /health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Core",
+      "item": [
+        {
+          "name": "POST /process",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Docflow-Gateway-Secret",
+                "value": "{{gateway_secret}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "text", "value": "Hello world", "type": "text" },
+                { "key": "chunk_size", "value": "800", "type": "text" },
+                { "key": "overlap", "value": "200", "type": "text" },
+                { "key": "mode", "value": "basic", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/process"
+          }
+        },
+        {
+          "name": "POST /pack",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Docflow-Gateway-Secret",
+                "value": "{{gateway_secret}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "text", "value": "Pack this document", "type": "text" },
+                { "key": "zip_name", "value": "pack.zip", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/pack"
+          }
+        }
+      ]
+    },
+    {
+      "name": "V2 Processing",
+      "item": [
+        {
+          "name": "POST /v2/process",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-Docflow-Gateway-Secret", "value": "{{gateway_secret}}", "type": "text" },
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" },
+              { "key": "X-Client-Id", "value": "{{client_id}}", "type": "text" },
+              { "key": "Idempotency-Key", "value": "docs-demo-001", "type": "text" }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "text", "value": "Company: Acme Inc\nDate: 2025-01-15\nAmount: $5000", "type": "text" },
+                { "key": "preset", "value": "extraction-focused", "type": "text" },
+                { "key": "schema_json", "value": "{\"fields\":[{\"name\":\"company\",\"required\":true},{\"name\":\"date\",\"type\":\"date\"}]}", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/v2/process"
+          }
+        },
+        {
+          "name": "POST /v2/analyze",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-Docflow-Gateway-Secret", "value": "{{gateway_secret}}", "type": "text" },
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "text", "value": "Analyze this document", "type": "text" },
+                { "key": "preset", "value": "rag-optimized", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/v2/analyze"
+          }
+        },
+        {
+          "name": "GET /v2/stats",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" },
+              { "key": "X-Client-Id", "value": "{{client_id}}", "type": "text" }
+            ],
+            "url": "{{base_url}}/v2/stats"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "POST /v2/admin/api-keys",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-Docflow-Admin-Secret", "value": "{{admin_secret}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "label", "value": "docs-user", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/v2/admin/api-keys"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Batch and Search",
+      "item": [
+        {
+          "name": "POST /v2/batch",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-Docflow-Gateway-Secret", "value": "{{gateway_secret}}", "type": "text" },
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" },
+              { "key": "Content-Type", "value": "application/json", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documents\": [\n    {\"text\": \"Invoice #1 due 2024-01-01\"},\n    {\"text\": \"Contract agreement effective 2024-02-01\"}\n  ]\n}"
+            },
+            "url": "{{base_url}}/v2/batch"
+          }
+        },
+        {
+          "name": "POST /v2/index",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-Docflow-Gateway-Secret", "value": "{{gateway_secret}}", "type": "text" },
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "text", "value": "Invoice #INV-001 for $1000, due 2024-02-01", "type": "text" },
+                { "key": "document_id", "value": "inv-001", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/v2/index"
+          }
+        },
+        {
+          "name": "GET /v2/search",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-Docflow-Gateway-Secret", "value": "{{gateway_secret}}", "type": "text" },
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v2/search?q=invoice+amount&limit=10",
+              "host": ["{{base_url}}"],
+              "path": ["v2", "search"],
+              "query": [
+                { "key": "q", "value": "invoice amount" },
+                { "key": "limit", "value": "10" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "POST /v2/jobs",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-Docflow-Gateway-Secret", "value": "{{gateway_secret}}", "type": "text" },
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "text", "value": "Large document payload", "type": "text" },
+                { "key": "preset", "value": "rag-optimized", "type": "text" },
+                { "key": "callback_url", "value": "https://myapp.com/webhook", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/v2/jobs"
+          }
+        },
+        {
+          "name": "GET /v2/jobs/{job_id}",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" }
+            ],
+            "url": "{{base_url}}/v2/jobs/{{job_id}}"
+          }
+        },
+        {
+          "name": "POST /v2/jobs/{job_id}/deliver",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-API-Key", "value": "{{api_key}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "callback_url", "value": "https://myapp.com/webhook", "type": "text" }
+              ]
+            },
+            "url": "{{base_url}}/v2/jobs/{{job_id}}/deliver"
+          }
+        }
+      ]
+    }
+  ]
+}
