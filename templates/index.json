@@ -1,0 +1,30 @@
+{
+  "total_templates": 4,
+  "categories": ["finance", "legal", "communication"],
+  "templates": [
+    {
+      "id": "invoice-extraction",
+      "name": "Invoice Extraction",
+      "description": "Extract invoice data from bills, receipts, and statements.",
+      "file": "/templates/invoice_extraction.json"
+    },
+    {
+      "id": "contract-analysis",
+      "name": "Contract Analysis",
+      "description": "Extract clauses and legal terms from agreements.",
+      "file": "/templates/contract_analysis.json"
+    },
+    {
+      "id": "expense-report",
+      "name": "Expense Report",
+      "description": "Extract reimbursement data from expense submissions.",
+      "file": "/templates/expense_report.json"
+    },
+    {
+      "id": "email-extraction",
+      "name": "Email Extraction",
+      "description": "Extract action items and metadata from email messages.",
+      "file": "/templates/email_extraction.json"
+    }
+  ]
+}

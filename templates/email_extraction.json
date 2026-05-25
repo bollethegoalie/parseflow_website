@@ -1,0 +1,26 @@
+{
+  "id": "email-extraction",
+  "name": "Email Extraction",
+  "description": "Extract action items and metadata from email messages.",
+  "category": "communication",
+  "preset": "summarization-friendly",
+  "chunk_size": 2000,
+  "overlap": 200,
+  "mode": "semantic-lite",
+  "fields": [
+    { "name": "sender", "type": "string" },
+    { "name": "recipient", "type": "array" },
+    { "name": "cc_recipients", "type": "array" },
+    { "name": "subject", "type": "string" },
+    { "name": "date", "type": "date" },
+    { "name": "email_type", "type": "string" },
+    { "name": "priority", "type": "string" },
+    { "name": "summary", "type": "string" },
+    { "name": "action_items", "type": "array" },
+    { "name": "decision", "type": "string" },
+    { "name": "deadline", "type": "date" },
+    { "name": "related_projects", "type": "array" },
+    { "name": "requires_response", "type": "boolean" },
+    { "name": "attachment_count", "type": "number" }
+  ]
+}

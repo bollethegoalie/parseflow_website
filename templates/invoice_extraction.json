@@ -1,0 +1,22 @@
+{
+  "id": "invoice-extraction",
+  "name": "Invoice Extraction",
+  "description": "Extract invoice data from bills, receipts, and statements.",
+  "category": "finance",
+  "preset": "extraction-focused",
+  "chunk_size": 2000,
+  "overlap": 200,
+  "mode": "semantic-lite",
+  "fields": [
+    { "name": "invoice_number", "type": "string" },
+    { "name": "date", "type": "date" },
+    { "name": "due_date", "type": "date" },
+    { "name": "customer_name", "type": "string" },
+    { "name": "amount", "type": "number" },
+    { "name": "tax_amount", "type": "number" },
+    { "name": "payment_terms", "type": "string" },
+    { "name": "line_items", "type": "array" },
+    { "name": "currency", "type": "string" },
+    { "name": "customer_email", "type": "string" }
+  ]
+}

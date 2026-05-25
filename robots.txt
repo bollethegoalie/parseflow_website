@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://docs.parseflow.tech/sitemap.xml
+
+# Crawl delay (optional, most bots ignore)
+Crawl-delay: 1
+
+# Disallow specific paths if needed
+# Disallow: /admin/
+# Disallow: /private/

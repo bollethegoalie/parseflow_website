@@ -1,0 +1,25 @@
+{
+  "id": "expense-report",
+  "name": "Expense Report",
+  "description": "Extract reimbursement data from expense submissions.",
+  "category": "finance",
+  "preset": "extraction-focused",
+  "chunk_size": 2000,
+  "overlap": 200,
+  "mode": "semantic-lite",
+  "fields": [
+    { "name": "employee_name", "type": "string" },
+    { "name": "employee_id", "type": "string" },
+    { "name": "department", "type": "string" },
+    { "name": "report_date", "type": "date" },
+    { "name": "period_start", "type": "date" },
+    { "name": "period_end", "type": "date" },
+    { "name": "expenses", "type": "array" },
+    { "name": "category_totals", "type": "object" },
+    { "name": "total_amount", "type": "number" },
+    { "name": "currency", "type": "string" },
+    { "name": "receipts_count", "type": "number" },
+    { "name": "project_code", "type": "string" },
+    { "name": "manager_approval", "type": "boolean" }
+  ]
+}
