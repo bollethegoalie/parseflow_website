@@ -1,278 +1,46 @@
-<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-postman" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>Parseflow Postman Quickstart | Parseflow</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://docs.parseflow.tech/docs/postman /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Parseflow Postman Quickstart | Parseflow"/><meta data-rh=true name=description content="This guide walks you through using Parseflow with Postman step by step, from importing the API to downloading the ZIP response and inspecting the main output files."/><meta data-rh=true property=og:description content="This guide walks you through using Parseflow with Postman step by step, from importing the API to downloading the ZIP response and inspecting the main output files."/><link data-rh=true rel=icon href=/img/logo.svg /><link data-rh=true rel=canonical href=https://docs.parseflow.tech/docs/postman /><link data-rh=true rel=alternate href=https://docs.parseflow.tech/docs/postman hreflang=en /><link data-rh=true rel=alternate href=https://docs.parseflow.tech/docs/postman hreflang=x-default /><link rel=stylesheet href=/assets/css/styles.369ef8a4.css /><script src=/assets/js/runtime~main.f9217c5a.js defer></script><script src=/assets/js/main.bc5ace4b.js defer></script></head><body><svg style="display: none;"><defs>
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-postman" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.1"><title data-rh=true>Postman Quickstart | Parseflow</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://docs.parseflow.tech/docs/postman /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Postman Quickstart | Parseflow"/><meta data-rh=true name=description content="Use Postman to test the live Parseflow API at https://api.parseflow.tech."/><meta data-rh=true property=og:description content="Use Postman to test the live Parseflow API at https://api.parseflow.tech."/><link data-rh=true rel=icon href=/img/logo.svg /><link data-rh=true rel=canonical href=https://docs.parseflow.tech/docs/postman /><link data-rh=true rel=alternate href=https://docs.parseflow.tech/docs/postman hreflang=en /><link data-rh=true rel=alternate href=https://docs.parseflow.tech/docs/postman hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://docs.parseflow.tech/docs/postman","name":"Postman Quickstart","position":1}]}</script><link rel=stylesheet href=/assets/css/styles.206d51de.css /><script src=/assets/js/runtime~main.a60da227.js defer></script><script src=/assets/js/main.4398486b.js defer></script></head><body><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-e10")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt="Parseflow Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt="Parseflow Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">Parseflow</b></a><a class="navbar__item navbar__link" href=/docs/overview>Docs</a><a class="navbar__item navbar__link" href=/docs/pricing>Pricing</a><a class="navbar__item navbar__link" href=/docs/billing>Billing</a><a class="navbar__item navbar__link" href=/docs/LAUNCH_STEP_BY_STEP>Launch Guide</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://www.postman.com/bollethegoalie-2754417/parseflow-public/collection/ivizqdp/parseflow-demo-public?action=share&source=copy-link&creator=54564964" target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">Postman</a><a class="navbar__item navbar__link" href=/contact>Contact</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Parseflow Postman Quickstart</h1></header>
-<p>This guide walks you through using Parseflow with Postman step by step, from importing the API to downloading the ZIP response and inspecting the main output files.</p>
-<blockquote>
-<p>Base URL for the live API:
-<code>https://parseflow-api.thankfulisland-fec0f8f2.westus2.azurecontainerapps.io</code></p>
-</blockquote>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-install-postman>1) Install Postman<a href=#1-install-postman class=hash-link aria-label="Direct link to 1) Install Postman" title="Direct link to 1) Install Postman" translate=no>​</a></h2>
-<ol>
-<li class="">Open Postman.</li>
-<li class="">If you do not already have it, download it from <a href=https://www.postman.com/downloads/ target=_blank rel="noopener noreferrer" class="">https://www.postman.com/downloads/</a>.</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-create-a-postman-environment>2) Create a Postman environment<a href=#2-create-a-postman-environment class=hash-link aria-label="Direct link to 2) Create a Postman environment" title="Direct link to 2) Create a Postman environment" translate=no>​</a></h2>
-<ol>
-<li class="">Click the gear icon in the top right and choose <code>Manage Environments</code>.</li>
-<li class="">Click <code>Add</code> to create a new environment.</li>
-<li class="">Name it <code>Parseflow Live</code>.</li>
-<li class="">Add these variables:<!-- -->
-<ul>
-<li class=""><code>baseUrl</code> = <code>https://parseflow-api.thankfulisland-fec0f8f2.westus2.azurecontainerapps.io</code></li>
-<li class=""><code>apiKey</code> = (leave blank for now)</li>
-</ul>
-</li>
-<li class="">Click <code>Save</code>.</li>
-<li class="">Select the <code>Parseflow Live</code> environment from the environment dropdown in the top right.</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-create-the-collection-manually-no-import>3) Create the collection manually (no import)<a href=#3-create-the-collection-manually-no-import class=hash-link aria-label="Direct link to 3) Create the collection manually (no import)" title="Direct link to 3) Create the collection manually (no import)" translate=no>​</a></h2>
-<p>If you want to set up Postman from scratch, do it manually without importing any collection file.</p>
-<ol>
-<li class="">Click <code>New</code> in the top left.</li>
-<li class="">Choose <code>Collection</code>.</li>
-<li class="">Name the collection <code>Parseflow API</code>.</li>
-<li class="">Click <code>Create</code>.</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=add-the-health-request>Add the health request<a href=#add-the-health-request class=hash-link aria-label="Direct link to Add the health request" title="Direct link to Add the health request" translate=no>​</a></h3>
-<ol>
-<li class="">Click the new collection and choose <code>Add a request</code>.</li>
-<li class="">Name it <code>Health</code>.</li>
-<li class="">Set the method to <code>GET</code>.</li>
-<li class="">Enter the URL: <code>{{baseUrl}}/health</code>.</li>
-<li class="">Click <code>Save</code>.</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=add-the-api-key-issuance-request>Add the API key issuance request<a href=#add-the-api-key-issuance-request class=hash-link aria-label="Direct link to Add the API key issuance request" title="Direct link to Add the API key issuance request" translate=no>​</a></h3>
-<ol>
-<li class="">In the collection, click <code>Add a request</code>.</li>
-<li class="">Name it <code>Issue API Key</code>.</li>
-<li class="">Set the method to <code>POST</code>.</li>
-<li class="">Enter the URL: <code>{{baseUrl}}/v2/admin/api-keys</code>.</li>
-<li class="">In the <code>Body</code> tab, choose <code>raw</code> and <code>JSON</code>.</li>
-<li class="">Enter:<!-- -->
-<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"name"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"postman-test"</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token punctuation" style=color:#393A34>}</span><br/></div></code></pre></div></div>
-</li>
-<li class="">Click <code>Save</code>.</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=add-the-process-file-request>Add the process file request<a href=#add-the-process-file-request class=hash-link aria-label="Direct link to Add the process file request" title="Direct link to Add the process file request" translate=no>​</a></h3>
-<ol>
-<li class="">Add another request and name it <code>Process File</code>.</li>
-<li class="">Set the method to <code>POST</code>.</li>
-<li class="">Set the URL to <code>{{baseUrl}}/v2/process</code>.</li>
-<li class="">Open the <code>Body</code> tab and choose <code>form-data</code>.</li>
-<li class="">Add a key named <code>file</code>, change its type to <code>File</code>, and attach a PDF or DOCX.</li>
-<li class="">Add optional keys like <code>mode</code> = <code>deterministic</code> and <code>preset</code> = <code>rag-optimized</code>.</li>
-<li class="">Click <code>Save</code>.</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=add-the-process-text-request>Add the process text request<a href=#add-the-process-text-request class=hash-link aria-label="Direct link to Add the process text request" title="Direct link to Add the process text request" translate=no>​</a></h3>
-<ol>
-<li class="">Add another request and name it <code>Process Text</code>.</li>
-<li class="">Set the method to <code>POST</code>.</li>
-<li class="">Use URL <code>{{baseUrl}}/v2/process</code>.</li>
-<li class="">In <code>Body</code>, choose <code>form-data</code>.</li>
-<li class="">Add a key <code>text</code> with a sample value, for example <code>Invoice total $125 due Friday</code>.</li>
-<li class="">Optionally add <code>mode</code> = <code>deterministic</code>.</li>
-<li class="">Click <code>Save</code>.</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=add-the-analyze-request>Add the analyze request<a href=#add-the-analyze-request class=hash-link aria-label="Direct link to Add the analyze request" title="Direct link to Add the analyze request" translate=no>​</a></h3>
-<ol>
-<li class="">Add another request and name it <code>Analyze</code>.</li>
-<li class="">Set the method to <code>POST</code>.</li>
-<li class="">Use URL <code>{{baseUrl}}/v2/analyze</code>.</li>
-<li class="">In <code>Body</code>, choose <code>form-data</code>.</li>
-<li class="">Add <code>text</code> with a sample value.</li>
-<li class="">Click <code>Save</code>.</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-confirm-the-health-endpoint-works>4) Confirm the health endpoint works<a href=#4-confirm-the-health-endpoint-works class=hash-link aria-label="Direct link to 4) Confirm the health endpoint works" title="Direct link to 4) Confirm the health endpoint works" translate=no>​</a></h2>
-<ol>
-<li class="">In the <code>Parseflow API</code> collection, open <code>Health</code>.</li>
-<li class="">Click <code>Send</code>.</li>
-<li class="">You should see a response like:<!-- -->
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-e10")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt="Parseflow Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt="Parseflow Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">Parseflow</b></a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/docs/overview>Docs</a><a class="navbar__item navbar__link" href=/n8n>n8n</a><a class="navbar__item navbar__link" href=/docs/pricing>Pricing</a><a class="navbar__item navbar__link" href=/docs/billing>Billing</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://documenter.getpostman.com/view/54564964/2sBXwmPsb9 target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">Postman</a><a class="navbar__item navbar__link" href=/contact>Contact</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class=sidebarViewport_aRkj><div class=sidebar_njMd><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/docs/overview><span title="Project Overview" class=linkLabel_WmDU>Project Overview</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/docs/about><span title="About Parseflow" class=linkLabel_WmDU>About Parseflow</span></a><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/getting-started><span title="Start Here" class=categoryLinkLabel_W154>Start Here</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/api><span title=API class=categoryLinkLabel_W154>API</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/docs/n8n><span title=Integrations class=categoryLinkLabel_W154>Integrations</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/docs/n8n><span title="Parseflow + n8n (No-Code)" class=linkLabel_WmDU>Parseflow + n8n (No-Code)</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/docs/postman><span title="Postman Quickstart" class=linkLabel_WmDU>Postman Quickstart</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/tutorials><span title=Learn class=categoryLinkLabel_W154>Learn</span></a></div><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=false href=/docs/billing><span title="Getting Started with Whop" class=categoryLinkLabel_W154>Getting Started with Whop</span></a></div><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/docs/faq><span title=FAQ class=linkLabel_WmDU>FAQ</span></a></ul></nav></div></div></aside><main class=docMainContainer_TBSr><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label=Breadcrumbs><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Home page" class=breadcrumbs__link href=/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_YNFT><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Integrations</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>Postman Quickstart</span></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Postman Quickstart</h1></header>
+<p>Use Postman to test the live Parseflow API at <strong><code>https://api.parseflow.tech</code></strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-import-the-collection>1. Import the collection<a href=#1-import-the-collection class=hash-link aria-label="Direct link to 1. Import the collection" title="Direct link to 1. Import the collection" translate=no>​</a></h2>
+<p>Download <a href=/assets/files/parseflow-demo-public.postman_collection-715b2e56eb481ecae98821dec521ea92.json target=_blank class="">parseflow-demo-public.postman_collection.json</a> from this site, or grab it from the <a href=https://github.com/bollethegoalie/jsonparser/blob/main/parseflow-demo-public.postman_collection.json target=_blank rel="noopener noreferrer" class="">jsonparser repo</a>.</p>
+<p>In Postman: <strong>File → Import → Upload</strong> the JSON file.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-create-an-environment>2. Create an environment<a href=#2-create-an-environment class=hash-link aria-label="Direct link to 2. Create an environment" title="Direct link to 2. Create an environment" translate=no>​</a></h2>
+<p>Create an environment named <strong>Parseflow Live</strong> with:</p>
+<table><thead><tr><th>Variable<th>Value<tbody><tr><td><code>baseUrl</code><td><code>https://api.parseflow.tech</code><tr><td><code>API_KEY</code><td>Your <code>pfk_*</code> key (leave blank until you have one)<tr><td><code>API_KEY_HEADER_NAME</code><td><code>X-API-Key</code></table>
+<p>Select <strong>Parseflow Live</strong> from the environment dropdown before sending requests.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-check-health>3. Check health<a href=#3-check-health class=hash-link aria-label="Direct link to 3. Check health" title="Direct link to 3. Check health" translate=no>​</a></h2>
+<p>Run <strong>Health</strong> (<code>GET {{baseUrl}}/health</code>). Expected response:</p>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"status"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"ok"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"version"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"0.2.0"</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token punctuation" style=color:#393A34>}</span><br/></div></code></pre></div></div>
-</li>
-</ol>
-<p>If this works, Postman is connected to the live Parseflow API.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-create-or-set-your-api-key>5) Create or set your API key<a href=#5-create-or-set-your-api-key class=hash-link aria-label="Direct link to 5) Create or set your API key" title="Direct link to 5) Create or set your API key" translate=no>​</a></h2>
-<p>If you already have a Parseflow API key, paste it into the <code>apiKey</code> environment variable.</p>
-<p>If you need a new key and the admin endpoint is available, do this:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-get-a-trial-key-no-purchase-required>4. Get a trial key (no purchase required)<a href=#4-get-a-trial-key-no-purchase-required class=hash-link aria-label="Direct link to 4. Get a trial key (no purchase required)" title="Direct link to 4. Get a trial key (no purchase required)" translate=no>​</a></h2>
+<p>Run <strong>Request trial key</strong> (<code>POST {{baseUrl}}/v2/keys</code>):</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"email"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"you@example.com"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"device_id"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"postman"</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token punctuation" style=color:#393A34>}</span><br/></div></code></pre></div></div>
+<ul>
+<li class="">Use a real email (disposable domains are blocked).</li>
+<li class="">When email delivery is configured, the response is <code>"status": "sent"</code> and the key arrives in your inbox.</li>
+<li class="">Trial keys expire in 24 hours with a small request cap.</li>
+<li class="">Paste the key into your <code>API_KEY</code> environment variable.</li>
+</ul>
+<p>For paid plans, checkout via <a class="" href=/docs/billing>Billing</a> — Whop sends a production <code>pfk_*</code> key by email.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-process-a-document>5. Process a document<a href=#5-process-a-document class=hash-link aria-label="Direct link to 5. Process a document" title="Direct link to 5. Process a document" translate=no>​</a></h2>
+<p>Run <strong>Process (file upload)</strong> or <strong>Process (text only)</strong> with your <code>API_KEY</code> set.</p>
+<p>Optional form fields:</p>
+<ul>
+<li class=""><code>mode</code> — <code>deterministic</code> (default) or <code>byok_assisted</code></li>
+<li class=""><code>preset</code> — <code>extraction-focused</code>, <code>rag-optimized</code>, or <code>summarization-friendly</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6-inspect-your-key>6. Inspect your key<a href=#6-inspect-your-key class=hash-link aria-label="Direct link to 6. Inspect your key" title="Direct link to 6. Inspect your key" translate=no>​</a></h2>
+<p>Run <strong>Key Info</strong> (<code>GET {{baseUrl}}/v2/me</code>) or <strong>Usage</strong> (<code>GET {{baseUrl}}/v2/usage</code>) to see plan limits and remaining quota.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=publish-your-own-postman-workspace>Publish your own Postman workspace<a href=#publish-your-own-postman-workspace class=hash-link aria-label="Direct link to Publish your own Postman workspace" title="Direct link to Publish your own Postman workspace" translate=no>​</a></h2>
+<p>If you maintain the public Postman Documenter link:</p>
 <ol>
-<li class="">Open <code>Issue API Key</code>.</li>
-<li class="">Click <code>Send</code>.</li>
-<li class="">Copy the returned API key.</li>
-<li class="">In the environment editor, paste it into <code>apiKey</code>.</li>
+<li class="">Import the updated collection JSON from this repo.</li>
+<li class="">In Postman, open the collection → <strong>⋯ → Share</strong> → publish or update the public documentation.</li>
+<li class="">Confirm every request uses <code>{{baseUrl}}</code> (not a hard-coded host).</li>
+<li class="">Update the environment defaults: <code>baseUrl</code> = <code>https://api.parseflow.tech</code>.</li>
 </ol>
-<p>If the admin endpoint is protected, add the required header(s) under <code>Headers</code>, for example:</p>
-<ul>
-<li class=""><code>X-Admin-Secret: &lt;your-admin-secret></code></li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6-set-default-auth-headers>6) Set default auth headers<a href=#6-set-default-auth-headers class=hash-link aria-label="Direct link to 6) Set default auth headers" title="Direct link to 6) Set default auth headers" translate=no>​</a></h2>
-<ol>
-<li class="">Click the collection name (<code>Parseflow API</code>).</li>
-<li class="">Choose <code>Edit</code>.</li>
-<li class="">Open the <code>Authorization</code> tab.</li>
-<li class="">Select <code>API Key</code>.</li>
-<li class="">Set the <code>Key</code> to <code>X-API-Key</code>.</li>
-<li class="">Set the <code>Value</code> to <code>{{apiKey}}</code>.</li>
-<li class="">Set <code>Add to</code> to <code>Header</code>.</li>
-<li class="">Click <code>Update</code>.</li>
-</ol>
-<p>This makes the API key send automatically for every request in the collection.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7-process-a-file-and-download-the-zip>7) Process a file and download the ZIP<a href=#7-process-a-file-and-download-the-zip class=hash-link aria-label="Direct link to 7) Process a file and download the ZIP" title="Direct link to 7) Process a file and download the ZIP" translate=no>​</a></h2>
-<ol>
-<li class="">Open the <code>Process File</code> request.</li>
-<li class="">Click <code>Send</code>.</li>
-<li class="">If the response is binary, click <code>Save Response</code>.</li>
-<li class="">Save the response as <code>parseflow-output.zip</code>.</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8-open-the-zip-and-inspect-the-files>8) Open the ZIP and inspect the files<a href=#8-open-the-zip-and-inspect-the-files class=hash-link aria-label="Direct link to 8) Open the ZIP and inspect the files" title="Direct link to 8) Open the ZIP and inspect the files" translate=no>​</a></h2>
-<p>Unzip the downloaded ZIP file and inspect the main outputs:</p>
-<ul>
-<li class=""><code>result.json</code></li>
-<li class=""><code>document.md</code></li>
-<li class=""><code>chunks.jsonl</code></li>
-</ul>
-<p><code>result.json</code> is the main structured parse output.
-<code>document.md</code> is the cleaned text and markdown export.
-<code>chunks.jsonl</code> contains one JSON object per chunk, which is the best format for indexing, embeddings, or search.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9-inspect-a-chunk>9) Inspect a chunk<a href=#9-inspect-a-chunk class=hash-link aria-label="Direct link to 9) Inspect a chunk" title="Direct link to 9) Inspect a chunk" translate=no>​</a></h2>
-<ol>
-<li class="">Open <code>chunks.jsonl</code> in a text editor.</li>
-<li class="">Each line is a separate JSON object.</li>
-<li class="">Look for fields such as <code>id</code>, <code>text</code>, <code>start</code>, <code>end</code>, and metadata.</li>
-<li class="">Use that chunk text in your downstream application.</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=10-if-you-want-you-can-still-import-later>10) If you want, you can still import later<a href=#10-if-you-want-you-can-still-import-later class=hash-link aria-label="Direct link to 10) If you want, you can still import later" title="Direct link to 10) If you want, you can still import later" translate=no>​</a></h2>
-<p>If you decide to use the OpenAPI import or a ready-made collection file later, the API URLs and auth are already set up in your environment.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11-troubleshooting>11) Troubleshooting<a href=#11-troubleshooting class=hash-link aria-label="Direct link to 11) Troubleshooting" title="Direct link to 11) Troubleshooting" translate=no>​</a></h2>
-<ul>
-<li class=""><code>401 Unauthorized</code> → your <code>apiKey</code> is missing or invalid.</li>
-<li class="">no response / timeout → check <code>{{baseUrl}}</code> and make sure <code>GET /health</code> succeeds.</li>
-<li class="">ZIP response fails to open → save it as <code>.zip</code> and unzip locally.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-confirm-the-health-endpoint-works-1>4) Confirm the health endpoint works<a href=#4-confirm-the-health-endpoint-works-1 class=hash-link aria-label="Direct link to 4) Confirm the health endpoint works" title="Direct link to 4) Confirm the health endpoint works" translate=no>​</a></h2>
-<ol>
-<li class="">In the imported collection, find <code>GET /health</code>.</li>
-<li class="">Click the request.</li>
-<li class="">Click <code>Send</code>.</li>
-<li class="">You should see a response like:<!-- -->
-<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"status"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"ok"</span><span class="token punctuation" style=color:#393A34>,</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"version"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"0.2.0"</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token punctuation" style=color:#393A34>}</span><br/></div></code></pre></div></div>
-</li>
-</ol>
-<p>If this works, Postman is talking to the live Parseflow service.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-create-or-set-your-api-key-1>5) Create or set your API key<a href=#5-create-or-set-your-api-key-1 class=hash-link aria-label="Direct link to 5) Create or set your API key" title="Direct link to 5) Create or set your API key" translate=no>​</a></h2>
-<p>If you already have a Parseflow API key, paste it into the <code>apiKey</code> environment variable.</p>
-<p>If you need a new key and the admin endpoint is available, do this:</p>
-<ol>
-<li class="">Create a new request in the collection.</li>
-<li class="">Method: <code>POST</code></li>
-<li class="">URL: <code>{{baseUrl}}/v2/admin/api-keys</code></li>
-<li class="">Headers:<!-- -->
-<ul>
-<li class=""><code>Content-Type: application/json</code></li>
-</ul>
-</li>
-<li class="">Body type: <code>raw</code> and JSON:<!-- -->
-<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-json codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token punctuation" style=color:#393A34>{</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  </span><span class="token property" style=color:#36acaa>"name"</span><span class="token operator" style=color:#393A34>:</span><span class="token plain"> </span><span class="token string" style=color:#e3116c>"postman-test"</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token punctuation" style=color:#393A34>}</span><br/></div></code></pre></div></div>
-</li>
-<li class="">Click <code>Send</code>.</li>
-</ol>
-<p>If your admin endpoint is protected, you may also need an admin header such as <code>X-Admin-Secret</code> or an equivalent. Set that in the <code>Headers</code> tab.</p>
-<p>When the request succeeds, copy the returned API key into your environment:</p>
-<ul>
-<li class=""><code>apiKey</code> = <code>pfk_...</code></li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6-set-default-auth-headers-1>6) Set default auth headers<a href=#6-set-default-auth-headers-1 class=hash-link aria-label="Direct link to 6) Set default auth headers" title="Direct link to 6) Set default auth headers" translate=no>​</a></h2>
-<ol>
-<li class="">Open the collection settings.</li>
-<li class="">Go to <code>Authorization</code>.</li>
-<li class="">Choose <code>API Key</code>.</li>
-<li class="">Set the <code>Key</code> to <code>X-API-Key</code>.</li>
-<li class="">Set the <code>Value</code> to <code>{{apiKey}}</code>.</li>
-<li class="">Set <code>Add to</code> to <code>Header</code>.</li>
-<li class="">Save.</li>
-</ol>
-<p>This makes sure every request in the collection sends your key automatically.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7-process-a-file-and-download-the-zip-1>7) Process a file and download the ZIP<a href=#7-process-a-file-and-download-the-zip-1 class=hash-link aria-label="Direct link to 7) Process a file and download the ZIP" title="Direct link to 7) Process a file and download the ZIP" translate=no>​</a></h2>
-<ol>
-<li class="">Find the request <code>POST /v2/process</code> in the collection.</li>
-<li class="">Click it.</li>
-<li class="">In the <code>Body</code> tab, choose <code>form-data</code>.</li>
-<li class="">Add these fields:<!-- -->
-<ul>
-<li class=""><code>file</code> → change the type from <code>Text</code> to <code>File</code>, then choose a PDF, DOCX, or TXT file from your computer.</li>
-<li class=""><code>mode</code> → <code>deterministic</code> (optional)</li>
-<li class=""><code>preset</code> → <code>rag-optimized</code> or <code>extraction-focused</code> (optional)</li>
-<li class=""><code>zip_name</code> → <code>parseflow-output</code> (optional)</li>
-</ul>
-</li>
-<li class="">Click <code>Send</code>.</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=what-you-should-see>What you should see<a href=#what-you-should-see class=hash-link aria-label="Direct link to What you should see" title="Direct link to What you should see" translate=no>​</a></h3>
-<ul>
-<li class="">The response should return a ZIP file.</li>
-<li class="">Postman may show a binary response.</li>
-<li class="">Click <code>Save Response</code>.</li>
-<li class="">Save the file as <code>parseflow-output.zip</code>.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8-open-the-zip-and-view-the-key-files>8) Open the ZIP and view the key files<a href=#8-open-the-zip-and-view-the-key-files class=hash-link aria-label="Direct link to 8) Open the ZIP and view the key files" title="Direct link to 8) Open the ZIP and view the key files" translate=no>​</a></h2>
-<p>Extract the ZIP file and inspect these files:</p>
-<ul>
-<li class=""><code>result.json</code>
-<ul>
-<li class="">Contains the parsed structure and the main extraction output.</li>
-</ul>
-</li>
-<li class=""><code>document.md</code>
-<ul>
-<li class="">Contains the cleaned text and markdown version of the document.</li>
-</ul>
-</li>
-<li class=""><code>chunks.jsonl</code>
-<ul>
-<li class="">Contains one JSON object per chunk.</li>
-<li class="">Each line is a chunk, so you can stream it into search, embeddings, or RAG pipelines.</li>
-</ul>
-</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=why-this-matters>Why this matters<a href=#why-this-matters class=hash-link aria-label="Direct link to Why this matters" title="Direct link to Why this matters" translate=no>​</a></h3>
-<ul>
-<li class=""><code>result.json</code> is the main machine-readable output.</li>
-<li class=""><code>document.md</code> is easy to read and useful for review or publishing.</li>
-<li class=""><code>chunks.jsonl</code> is the best format for downstream use in search, vectorization, or summary pipelines.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9-inspect-a-chunk-step-by-step>9) Inspect a chunk, step-by-step<a href=#9-inspect-a-chunk-step-by-step class=hash-link aria-label="Direct link to 9) Inspect a chunk, step-by-step" title="Direct link to 9) Inspect a chunk, step-by-step" translate=no>​</a></h2>
-<ol>
-<li class="">Open <code>chunks.jsonl</code> in a text editor.</li>
-<li class="">Each line is a complete JSON object.</li>
-<li class="">Look for fields like:<!-- -->
-<ul>
-<li class=""><code>id</code></li>
-<li class=""><code>text</code></li>
-<li class=""><code>start</code> / <code>end</code></li>
-<li class="">any metadata your pipeline includes</li>
-</ul>
-</li>
-<li class="">Use the chunk text for embedding, search indexing, or chaining into a summarization flow.</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=10-quick-postman-checks>10) Quick Postman checks<a href=#10-quick-postman-checks class=hash-link aria-label="Direct link to 10) Quick Postman checks" title="Direct link to 10) Quick Postman checks" translate=no>​</a></h2>
-<ul>
-<li class="">If <code>GET /health</code> fails, the service URL is wrong or the app is down.</li>
-<li class="">If <code>POST /v2/process</code> fails with <code>401</code>, your <code>apiKey</code> is wrong.</li>
-<li class="">If the response is binary but not a ZIP, check the request body and ensure <code>file</code> is attached correctly.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11-example-walkthrough>11) Example walkthrough<a href=#11-example-walkthrough class=hash-link aria-label="Direct link to 11) Example walkthrough" title="Direct link to 11) Example walkthrough" translate=no>​</a></h2>
-<ol>
-<li class="">Import the collection.</li>
-<li class="">Set <code>baseUrl</code> and <code>apiKey</code>.</li>
-<li class="">Run <code>GET /health</code>.</li>
-<li class="">Issue a key if needed via <code>POST /v2/admin/api-keys</code>.</li>
-<li class="">Run <code>POST /v2/process</code> with a file.</li>
-<li class="">Save the ZIP and open <code>chunks.jsonl</code>.</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=12-notes-for-users>12) Notes for users<a href=#12-notes-for-users class=hash-link aria-label="Direct link to 12) Notes for users" title="Direct link to 12) Notes for users" translate=no>​</a></h2>
-<ul>
-<li class="">The public API URL does not change unless you redeploy to a new host.</li>
-<li class="">You do not have to store the ZIP file in Postman.</li>
-<li class="">The ZIP is the “main output bundle” that contains everything useful from the parse.</li>
-</ul>
-<p>If you want, I can also add a matching ready-to-use Postman collection and environment JSON file under <code>docflow-docs/static/postman/</code>.</div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#1-install-postman class="table-of-contents__link toc-highlight">1) Install Postman</a><li><a href=#2-create-a-postman-environment class="table-of-contents__link toc-highlight">2) Create a Postman environment</a><li><a href=#3-create-the-collection-manually-no-import class="table-of-contents__link toc-highlight">3) Create the collection manually (no import)</a><ul><li><a href=#add-the-health-request class="table-of-contents__link toc-highlight">Add the health request</a><li><a href=#add-the-api-key-issuance-request class="table-of-contents__link toc-highlight">Add the API key issuance request</a><li><a href=#add-the-process-file-request class="table-of-contents__link toc-highlight">Add the process file request</a><li><a href=#add-the-process-text-request class="table-of-contents__link toc-highlight">Add the process text request</a><li><a href=#add-the-analyze-request class="table-of-contents__link toc-highlight">Add the analyze request</a></ul><li><a href=#4-confirm-the-health-endpoint-works class="table-of-contents__link toc-highlight">4) Confirm the health endpoint works</a><li><a href=#5-create-or-set-your-api-key class="table-of-contents__link toc-highlight">5) Create or set your API key</a><li><a href=#6-set-default-auth-headers class="table-of-contents__link toc-highlight">6) Set default auth headers</a><li><a href=#7-process-a-file-and-download-the-zip class="table-of-contents__link toc-highlight">7) Process a file and download the ZIP</a><li><a href=#8-open-the-zip-and-inspect-the-files class="table-of-contents__link toc-highlight">8) Open the ZIP and inspect the files</a><li><a href=#9-inspect-a-chunk class="table-of-contents__link toc-highlight">9) Inspect a chunk</a><li><a href=#10-if-you-want-you-can-still-import-later class="table-of-contents__link toc-highlight">10) If you want, you can still import later</a><li><a href=#11-troubleshooting class="table-of-contents__link toc-highlight">11) Troubleshooting</a><li><a href=#4-confirm-the-health-endpoint-works-1 class="table-of-contents__link toc-highlight">4) Confirm the health endpoint works</a><li><a href=#5-create-or-set-your-api-key-1 class="table-of-contents__link toc-highlight">5) Create or set your API key</a><li><a href=#6-set-default-auth-headers-1 class="table-of-contents__link toc-highlight">6) Set default auth headers</a><li><a href=#7-process-a-file-and-download-the-zip-1 class="table-of-contents__link toc-highlight">7) Process a file and download the ZIP</a><ul><li><a href=#what-you-should-see class="table-of-contents__link toc-highlight">What you should see</a></ul><li><a href=#8-open-the-zip-and-view-the-key-files class="table-of-contents__link toc-highlight">8) Open the ZIP and view the key files</a><ul><li><a href=#why-this-matters class="table-of-contents__link toc-highlight">Why this matters</a></ul><li><a href=#9-inspect-a-chunk-step-by-step class="table-of-contents__link toc-highlight">9) Inspect a chunk, step-by-step</a><li><a href=#10-quick-postman-checks class="table-of-contents__link toc-highlight">10) Quick Postman checks</a><li><a href=#11-example-walkthrough class="table-of-contents__link toc-highlight">11) Example walkthrough</a><li><a href=#12-notes-for-users class="table-of-contents__link toc-highlight">12) Notes for users</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Docs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/docs/getting-started>Getting Started</a><li class=footer__item><a class=footer__link-item href=/docs/api-reference>API Reference</a><li class=footer__item><a class=footer__link-item href=/docs/pricing>Pricing</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Product</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/docs/about>About</a><li class=footer__item><a class=footer__link-item href=/docs/limits>Limits</a><li class=footer__item><a class=footer__link-item href=/docs/faq>FAQ</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>More</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/contact>Contact</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Parseflow.</div></div></div></footer></div></body>
+<p>Public doc link (update after re-import): <a href=https://documenter.getpostman.com/view/54564964/2sBXwmPsb9 target=_blank rel="noopener noreferrer" class="">Postman Documenter</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=troubleshooting>Troubleshooting<a href=#troubleshooting class=hash-link aria-label="Direct link to Troubleshooting" title="Direct link to Troubleshooting" translate=no>​</a></h2>
+<table><thead><tr><th>Problem<th>Fix<tbody><tr><td><code>401 Unauthorized</code><td>Set <code>API_KEY</code> to a valid <code>pfk_*</code> key<tr><td>Trial key not received<td>Check spam; wait 2–3 minutes; try a non-disposable email<tr><td>Connection error<td>Confirm <code>GET /health</code> works in a browser<tr><td><code>413</code> / payload too large<td>Reduce file size or split into smaller documents</table>
+<p>See also <a class="" href=/docs/POSTMAN_SETUP>POSTMAN_SETUP.md</a> for the full walkthrough.</div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href=/docs/n8n><div class=pagination-nav__sublabel>Previous</div><div class=pagination-nav__label>Parseflow + n8n (No-Code)</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/docs/tutorials><div class=pagination-nav__sublabel>Next</div><div class=pagination-nav__label>Tutorials</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#1-import-the-collection class="table-of-contents__link toc-highlight">1. Import the collection</a><li><a href=#2-create-an-environment class="table-of-contents__link toc-highlight">2. Create an environment</a><li><a href=#3-check-health class="table-of-contents__link toc-highlight">3. Check health</a><li><a href=#4-get-a-trial-key-no-purchase-required class="table-of-contents__link toc-highlight">4. Get a trial key (no purchase required)</a><li><a href=#5-process-a-document class="table-of-contents__link toc-highlight">5. Process a document</a><li><a href=#6-inspect-your-key class="table-of-contents__link toc-highlight">6. Inspect your key</a><li><a href=#publish-your-own-postman-workspace class="table-of-contents__link toc-highlight">Publish your own Postman workspace</a><li><a href=#troubleshooting class="table-of-contents__link toc-highlight">Troubleshooting</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Docs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/docs/getting-started>Getting Started</a><li class=footer__item><a class=footer__link-item href=/docs/api-reference>API Reference</a><li class=footer__item><a class=footer__link-item href=/docs/pricing>Pricing</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Product</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/docs/about>About</a><li class=footer__item><a class=footer__link-item href=/docs/limits>Limits</a><li class=footer__item><a class=footer__link-item href=/docs/faq>FAQ</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>More</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/contact>Contact</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 Parseflow.</div></div></div></footer></div></body>

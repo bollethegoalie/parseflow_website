@@ -1,0 +1,285 @@
+{
+  "info": {
+    "_postman_id": "parseflow-public-demo-001",
+    "name": "Parseflow Demo - Public",
+    "description": "Public Parseflow API collection. Upload documents (PDF, DOCX, TXT) and get structured output. Health check, processing, and analysis endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Public",
+      "description": "Public endpoints safe for users",
+      "item": [
+        {
+          "name": "Health",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Response has status and version\", () => {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json).to.have.property('status');",
+                  "  pm.expect(json.status).to.equal('ok');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            },
+            "description": "Verify the API is running and healthy. No authentication required."
+          },
+          "response": []
+        },
+        {
+          "name": "Request trial key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Key request accepted\", () => {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json).to.have.property('status');",
+                  "  pm.expect(['sent', 'ok']).to.include(json.status);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"you@example.com\",\n  \"device_id\": \"postman\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v2/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["v2", "keys"]
+            },
+            "description": "Request a free trial API key delivered by email. Replace the email with your real inbox. Paste the pfk_* key from your email into the API_KEY variable."
+          },
+          "response": []
+        },
+        {
+          "name": "Process (file upload)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200 or 201\", () => {",
+                  "  pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});",
+                  "pm.test(\"Response is ZIP or JSON\", () => {",
+                  "  const contentType = pm.response.headers.get('content-type') || '';",
+                  "  pm.expect(contentType.includes('application/zip') || contentType.includes('application/json')).to.be.true;",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "{{API_KEY_HEADER_NAME}}",
+                "value": "{{API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "sample.pdf",
+                  "description": "PDF, DOCX, or TXT file to process"
+                },
+                {
+                  "key": "analyze",
+                  "value": "Invoice total $125 due Friday",
+                  "type": "text",
+                  "description": "Optional: short text to bias analysis"
+                },
+                {
+                  "key": "mode",
+                  "value": "",
+                  "type": "text",
+                  "description": "Optional: parsing mode (e.g., 'strict')"
+                },
+                {
+                  "key": "preset",
+                  "value": "",
+                  "type": "text",
+                  "description": "Optional: export preset (e.g., 'invoice')"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v2/process",
+              "host": ["{{baseUrl}}"],
+              "path": ["v2", "process"]
+            },
+            "description": "Upload a document (PDF, DOCX, TXT) for processing. Returns a ZIP archive with structured output.\n\nTo save the response:\n1. Click 'Send and Download' (not regular 'Send')\n2. Choose a filename like 'parseflow-output.zip'\n\nZIP contents:\n- result.json: structured parse output\n- document.md: flattened markdown\n- chunks.jsonl: line-delimited JSON chunks\n- other exporter artifacts"
+          },
+          "response": []
+        },
+        {
+          "name": "Process (text-only)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200 or 201\", () => {",
+                  "  pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "{{API_KEY_HEADER_NAME}}",
+                "value": "{{API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "text",
+                  "value": "Customer: ACME Corp. Invoice total: $1,250.00. Due date: 2026-06-01. Payment terms: Net 30.",
+                  "type": "text",
+                  "description": "Text-only input. No file upload needed."
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v2/process",
+              "host": ["{{baseUrl}}"],
+              "path": ["v2", "process"]
+            },
+            "description": "Analyze text-only input using form-data. Useful for quick extraction and structure testing."
+          },
+          "response": []
+        },
+        {
+          "name": "Key Info",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Response has key_id\", () => {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json).to.have.property('key_id');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "{{API_KEY_HEADER_NAME}}",
+                "value": "{{API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/v2/me",
+              "host": ["{{baseUrl}}"],
+              "path": ["v2", "me"]
+            },
+            "description": "Retrieve information about the current API key, including key_id, label, and plan."
+          },
+          "response": []
+        },
+        {
+          "name": "Usage Info",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Response has current_usage\", () => {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json).to.have.property('current_usage');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "{{API_KEY_HEADER_NAME}}",
+                "value": "{{API_KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/v2/usage",
+              "host": ["{{baseUrl}}"],
+              "path": ["v2", "usage"]
+            },
+            "description": "Retrieve usage and quota information for the current API key."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.parseflow.tech",
+      "description": "Base URL of the Parseflow API. Replace with your deployment URL.",
+      "type": "string"
+    },
+    {
+      "key": "API_KEY",
+      "value": "",
+      "description": "Your pfk_* API key from trial email or Whop purchase.",
+      "type": "string"
+    },
+    {
+      "key": "API_KEY_HEADER_NAME",
+      "value": "X-API-Key",
+      "description": "Header name for API key authentication",
+      "type": "string"
+    }
+  ]
+}

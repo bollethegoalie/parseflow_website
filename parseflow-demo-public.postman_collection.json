@@ -40,6 +40,50 @@
           "response": []
         },
         {
+          "name": "Request trial key",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+                  "pm.test(\"Key request accepted\", () => {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json).to.have.property('status');",
+                  "  pm.expect(['sent', 'ok']).to.include(json.status);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"you@example.com\",\n  \"device_id\": \"postman\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v2/keys",
+              "host": ["{{baseUrl}}"],
+              "path": ["v2", "keys"]
+            },
+            "description": "Request a free trial API key delivered by email. Replace the email with your real inbox. Paste the pfk_* key from your email into the API_KEY variable."
+          },
+          "response": []
+        },
+        {
           "name": "Process (file upload)",
           "event": [
             {
@@ -221,14 +265,14 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://parseflow-api.thankfulisland-fec0f8f2.westus2.azurecontainerapps.io",
+      "value": "https://api.parseflow.tech",
       "description": "Base URL of the Parseflow API. Replace with your deployment URL.",
       "type": "string"
     },
     {
       "key": "API_KEY",
-      "value": "pk_demo_placeholder",
-      "description": "Demo API key. Replace with your actual demo key.",
+      "value": "",
+      "description": "Your pfk_* API key from trial email or Whop purchase.",
       "type": "string"
     },
     {
